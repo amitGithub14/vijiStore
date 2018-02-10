@@ -1,0 +1,430 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="http://shoppingwebangular.azurewebsites.net/StaticContent/js/src?v=vJJrM7QjUfWYlT44ZLZmbVMzlNny8T-3fgBvjVW0-2M1"></script>
+    <link href="http://shoppingwebangular.azurewebsites.net/StaticContent/css/src?v=XnTxm1C0uxx-T9QS8jUkbIZZGmczyqIttzvpqqJjYDs1" rel="stylesheet"/>
+
+    <!-- <link href="styles/bootstrap/source1.css" rel="stylesheet"/> -->
+
+    <!-- <link href="styles/main.css" rel="stylesheet"/> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="http://shoppingwebangular.azurewebsites.net/StaticContent/Js/CustomScript/ShopLayout.js"></script>
+
+    <style>
+        .dev {
+            /*display: none;*/
+        }
+        .main_head{
+          width:100% !important;
+        }
+        .slide-menu{
+          margin-bottom: 5px;
+          margin-top: -10px;
+        }
+
+        .draggable {
+          max-width: auto;
+          overflow: hidden;
+          border: 3px 0px 3px 0px  solid #ccc;
+          padding: 10px;
+          padding-bottom: 2px;
+          vertical-align: middle;
+          background-color: #efefef;
+        }
+
+        .draggable ul {
+          padding: 0;
+          list-style-type: none;
+          display: inline-flex !important;
+          list-style:none !important;
+          flex-direction: row;
+        }
+
+        .draggable ul li {
+          margin-left: 10px;
+          background-color: #f8f8f8;
+          padding:5px;
+          border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="load" style="visibility:hidden"></div>
+
+    <div id="adv_nav">
+        <div class="container dev">
+            <div class="top_nav">
+                <div class="col-sm-2 col-xs-7">
+                    <h2 style="margin:0px;">
+                        <span class="smallnav menu" onclick="openNav()">
+                            <p style="position:absolute; left:-6px; top:-6px">
+                                <i class="fa fa-bars img-color"></i>
+                            </p>
+                            <img src="/StaticContent/Images/logo1.png" class="img-responsive" />
+                        </span>
+                    </h2>
+                    <h1 style="margin:0px;">
+                        <span class="largenav" onclick="location.href='/home/shop'">
+                            <img src="/StaticContent/Images/logo1.png" class="img-responsive">
+                        </span>
+                    </h1>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <div class="typeahead__container">
+                        <div class="typeahead__field">
+                            <span class="typeahead__query">
+                                <input name="q" type="search" class="SearchName" ng-model="ProductName" placeholder="Search Products">
+                            </span> <span class="typeahead__button">
+                                <button ng-click="SearchProduct()"> <span class=""><i class="fa fa-search" aria-hidden="true"></i></span> </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xs-12 map_add remove_space_mob hidden-xs">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> <span class="map_pin">
+                        <input class="" placeholder="452001">
+                        <button class="btn_map"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    </span>
+                    <div id="cartIcon" class="upper-links btn_cart">
+                        <span class="links cart_ico" href=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i><span class="itemCount"></span></span>
+                        <div class="togglefil4cart">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Â </th>
+                                                <th>Product</th>
+                                                <th>Name</th>
+                                                <th>Qty</th>
+                                                <th class="text-center">Price</th>
+                                                <th class="text-center">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+
+                                            <td>product1</td>
+
+                                            <td>Name</td>
+                                            <td>Unit</td>
+                                            <td>Qty</td>
+                                            <td>Price</td>
+                                            <td>Total Value</td>
+                                        </tr>
+
+                                    </table>
+                                    <button onclick="location.href='/home/mycart'" class="btn_cntn">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2  m-top hidden-xs">
+                    <ul class="largenav pull-right">
+
+                        <li id="user" class="dropdown btn_usr">
+                            <div class="profile-name" ng-hide="isUserHide">
+                                <span><i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;<span class="">{{Name}}</span> <span class="caret"></span></span>
+
+                            </div>
+                            <div class="profile-name m-top-login" ng-hide="isLoginHide">
+                                <span><a href="/home/login" class="login-user">Login</a> | <a href="/home/register" class="login-user">Signup</a></span>
+                            </div>
+                            <div class="togglefil4usr">
+                                <div class="list"><a href="/home/myorder">My Order</a></div>
+                                <div class="list"><a href="">My Profile</a></div>
+                                <div class="list"><a href="">Forget Password</a></div>
+                                <div class="list"><a ng-click="Logout()">Logout</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- mobile-->
+                <div class="col-sm-6 hidden-lg">
+
+                </div>
+                <div class="col-sm-2 col-sm-12 map_add remove_space_mob mobile-header hidden-lg">
+                    <span data-toggle="modal" data-target="#SearchModel" class=""><i class="fa fa-search mobile-search" aria-hidden="true"></i></span>
+                     <span class="map_pin">
+
+                        <button class="btn_map"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    </span>
+                    <div id="cartIcon" class="upper-links btn_cart">
+                        <span class="links cart_ico" href=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i><span class="itemCount" ></span></span>
+
+                    </div>
+                </div>
+
+
+                <!---->
+                <div class="clearfix"></div>
+            </div>
+            <!-- mobile-->
+            <div class="top_nav hidden-lg">
+                <div class="col-sm-12">
+                    <center class="img-color cursor"> loaction - 638401 <span><u>change</u></span></center>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!-- Search Model-->
+        <div id="SearchModel" class="modal fade" role="dialog">
+
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content search-mobile-top cursor">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Enter Product Name</label>
+                                <label class="float-right cursor" ng-click="SearchClose()">x</label>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mobile-search-product">
+
+                                <input type="text" class="form-control SearchName1" ng-model="ProductName" ng-change="SearchProductMobile()" />
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 searchtable">
+                            <table class="table table-hover">
+                                <tbody>
+
+                                    <tr ng-repeat="val in SearchData track by $index ">
+                                        <td ng-click="ProductSearchStore(val.Name)">{{val.Name}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Mobile Nav-->
+    <div id="mySidenav" class="sidenav">
+        <div class="container side_nav_head"> <span class="sidenav-heading">
+            <img src="StaticContent/Images/home.png"></span>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times"></i></a> </div>
+        <div class="side_nav_list">
+            <a href="/home/shop">Home</a>
+            <a href="store.html">Store</a>
+            <a href="my_cart.html">My Cart</a>
+            <a href="checkout.html">Checkout</a>
+        </div>
+    </div>
+
+    <div class="container>
+
+<script src="http://shoppingwebangular.azurewebsites.net/StaticContent/Js/CustomScript/Store.js"></script>
+<div>
+    <div class="col-lg-12">
+        <h2 class="main_head">{{ShopName}}</h2>
+    </div>
+    <div class="col-lg-12 slide-menu">
+      <!-- <div class="draggable cursor">
+
+          <ul>
+              <li ng-repeat="val in ProductCategeory">
+                  <span id="{{'Category'+$index}}" ng-click="loadProductdetails(val.Category_id,$index)"> {{val.Category}}</span>
+              </li>
+          </ul>
+
+      </div> -->
+      <div class="draggable cursor">
+            <ul>
+                <li><span id="Category1">Category1</span></li>
+                <li><span id="Category2">Category2</span></li>
+                <li><span id="Category3">Category3</span></li>
+                <li><span id="Category4">Category4</span></li>
+                <li><span id="Category5">Category5</span></li>
+                <li><span id="Category6">Category6</span></li>
+                <li><span id="Category7">Category7</span></li>
+                <li><span id="Category8">Category8</span></li>
+                <li><span id="Category9">Category9</span></li>
+                <li><span id="Category10">Category10</span></li>
+            </ul>
+          </div>
+        </div>
+    <style>
+        .remove_half {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    </style>
+    <div class="col-lg-12 white remove_space_mob">
+
+        <div ng-repeat="val in StoreTable">
+            <div class="col-lg-3 remove_space_mob remove_half">
+                <div class="pro_thumb store-container1">
+
+
+                    <center>
+                        <span class="pull-right discount">{{val.Discount }}% Off </span>
+                        <div class="mt-15">
+                            <div class="imgLiquidNoFill imgLiquid {{val.ShowProduct}}" style="width:125px; height:150px;">
+                                <img style="background:url(http://imguploaddemo.blob.core.windows.net/productimage/12a85d7c-3a9e-4733-a1fd-6af1e0d38646.gif) no-repeat;"
+                                     ng-src={{val.Item_pic_path}} alt="Loading..">
+                                {{ LoadImageStyle() }}
+                            </div>
+                        </div>
+                        <div class="middle" ng-hide="{{val.ShowProductNostock }}">
+                            <div class="text">out of stock</div>
+                        </div>
+                    </center>
+
+
+
+                    <div class="col-lg-12">
+                        <h2>{{val.Name}} {{val.Qty_unit}}</h2>
+                        <h3><span>₹ {{val.Price | currency:""}} &nbsp; <strike class="product-amount-strike">₹ {{val.Mrp | currency:""}}</strike></span> </h3>
+
+
+                    </div>
+                    <div class="col-lg-4 col-xs-6" style="padding-right:0px; margin-bottom:15px;">
+                        <select id="{{'P'+$index}}">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-8 col-xs-6">
+                        <button ng-click="Plus($index,val)"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="col-lg-10">
+        <div ng-hide="isAlertHide">
+            <div class="alert alert-danger store-noproduct">
+                <center>  No products</center>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-10" ng-hide="isPage">
+            <center><div id="page-selection"></div></center>
+        </div>
+
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<script src="http://shoppingwebangular.azurewebsites.net/StaticContent/Js/imgLiquid-min.js"></script>
+<script type="text/javascript">
+
+    $(document).on('ready', function () {
+
+        $(".imgLiquidFill").imgLiquid({
+            fill: true,
+            horizontalAlign: "center",
+            verticalAlign: "top"
+        });
+
+        $(".imgLiquidNoFill").imgLiquid({
+            fill: false,
+            horizontalAlign: "center",
+            verticalAlign: "50%"
+        });
+
+        $('#page-selection').on("click", function () {
+            //$(window).scrollTop(0);
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1000);
+        });
+    });
+</script>
+
+
+
+        <div class="togglefil4cart-store">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Â </th>
+                                <th>Product</th>
+                                <th>Name</th>
+                                <th>Qty</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Total</th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="val in productdata track by $index ">
+
+                            <td>{{$index}}</td>
+
+                            <td>{{val.Name}}</td>
+                            <td>{{val.Unit}}</td>
+                            <td>{{val.Qty}}</td>
+                            <td>{{val.Price}}</td>
+                            <td>{{val.Total}}</td>
+                        </tr>
+
+                    </table>
+                    <button onclick="location.href='/home/mycart'" class="btn_cntn">Continue</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <br /><br /><br /><br />
+    <div class="footer">
+        <div> <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a> <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a> <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a> <a href="mailto:e-shoppy@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a></div>
+        <p> Â© 2017 e-shoppy All rights reserved. </p>
+
+    </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+    <script src="script/slide_menu.js"></script>
+</body>
+<head>
+    <script src="http://shoppingwebangular.azurewebsites.net/StaticContent/Js/CustomScript/LayoutCommon.js"></script>
+</head>
+</html>
