@@ -1,0 +1,19 @@
+.navbar-inverse{
+  color:white !important;
+  background-color: #209e91 !important;
+  border-color: #209e91;
+}
+.right-bar a{
+  color:white;
+}
+.navbar-brand{
+  color:white !important;
+  margin-left: 10px !important;
+}
+
+@media (max-width: 767px) {
+.navbar-header:after, .navbar-header:after{
+  display:block !important;
+  content:none;
+}
+}
