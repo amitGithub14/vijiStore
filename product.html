@@ -151,7 +151,7 @@
       <div class="container" >
         <header class="scroll">
           <nav>
-            <a class="category-item" href="https://amitgithub14.github.io/vijiStore/product.html?id=1">Category 1</a>
+            <a class="category-item active" href="https://amitgithub14.github.io/vijiStore/product.html?id=1">Category 1</a>
             <a class="category-item" href="https://amitgithub14.github.io/vijiStore/product.html?id=2">Category 2</a>
             <a class="category-item" href="https://amitgithub14.github.io/vijiStore/product.html?id=3">Category 3</a>
             <a class="category-item" href="https://amitgithub14.github.io/vijiStore/product.html?id=4">Category 4</a>
@@ -240,6 +240,10 @@
     </div>
     <script>
       for (var i = 0; i < document.links.length; i++) {
+        if (document.links[i].hasClass('active'))
+        {
+          document.links[i].className = '';
+        }
         if (document.links[i].href == document.URL) {
             document.links[i].className = 'active';
         }
