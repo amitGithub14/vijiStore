@@ -10,12 +10,38 @@
   color:white !important;
   margin-left: 10px !important;
 }
-
+.row{
+  border-bottom: 2px solid #ccc;
+}
 .btn, .btn-default{
   background-color: #e85656;
   color:white;
 }
 
+.btn-secondary{
+  background-color: #eee;
+  color:#333;
+  border: 1px solid #aaa;
+}
+.discount{
+    color: #e85656;
+}
+.discounted-amt{
+  padding:10px;
+  color: #209e91;
+}
+
+.form-control{
+  border-radius: none;
+  padding:2px;
+  width:auto !important;
+  display: inline-block;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
+  /*height:32px !important; */
+}
 @media (max-width: 767px) {
 .navbar-header:after, .navbar-header:after{
   display:block !important;
