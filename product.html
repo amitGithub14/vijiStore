@@ -54,6 +54,30 @@
       margin-left: 50px;
     }
 
+    .notification-panel{
+      display: none;
+      text-align: center;
+      position:absolute;
+      background-color:#ccc;
+      padding:20px;
+      width:100%;
+      z-index:2000;
+      bottom:0; left:0; right:0;
+      -webkit-box-shadow: 5px -3px 5px 6px #888;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -moz-box-shadow:    5px -3px 5px 6px #888;  /* Firefox 3.5 - 3.6 */
+      box-shadow:         5px -3px 5px 6px #888;
+    }
+    .notification-panel a{
+      color: #333;
+      text-decoration: none;
+    }
+    .notification-panel .closebtn{
+      position: absolute;
+      bottom: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
     @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
@@ -86,7 +110,7 @@
   }
         </style>
 </head>
-<body>
+<body onload="loadNotf();">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -206,9 +230,13 @@
               <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Add</a></p>
         </div>
       </div>
-      <div class="text-center" style="margin-top:20px;margin-bottom:20px;">
+      <div style="margin-top:20px;">&nbsp;</div>
+      <div id="notf" class="notification-panel">
+      <a class="btn btn-secondary" href="#">Download App</a><a href="javascript:void(0)" class="closebtn" onclick="closeNotf()">&times;</a>
+      </div>
+    <!-- <div class="text-center" style="margin-top:20px;margin-bottom:20px;">
       <a class="btn btn-secondary" href="#">Download App</a>
-    </div>
+    </div> -->
     </div>
     <script>
       for (var i = 0; i < document.links.length; i++) {
@@ -221,25 +249,29 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="slide_menu.js"></script>
     <script>
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
+      function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+      }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+      }
 
+      function closeNotf() {
+          document.getElementById("notf").style.display = "none";
+      }
 
+      function loadNotf(){
+            document.getElementById("notf").style.display = "block";
+      }
+      $(document).ready(function(){
+        $(".sidenav a").on("click", function(){
+          closeNav();
+        });
 
-$(document).ready(function(){
-  $(".sidenav a").on("click", function(){
-    closeNav();
-  });
-});
-
+      });
 </script>
 </body>
 </html>
