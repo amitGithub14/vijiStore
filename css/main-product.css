@@ -14,8 +14,6 @@
   border-bottom: 2px solid #ccc;
 }
 
-a.active {border-bottom: 2px solid #209e91;}
-
 .btn, .btn-default{
   background-color: #e85656;
   color:white;
@@ -57,6 +55,8 @@ a.active {border-bottom: 2px solid #209e91;}
 .scroll nav a:hover{
   border_bottom:2px solid #209e91 !important;
 } */
+
+
 @media (max-width: 767px) {
 .navbar-header:after, .navbar-header:after{
   display:block !important;
