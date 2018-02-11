@@ -287,18 +287,31 @@
         $(".sidenav a").on("click", function(){
           closeNav();
         });
-      //   $(".category-item").on("click", function(){
-      //     if(!$(this).hasClass("active"))
-      //     {
-      //       alert("add");
-      //       $(this).addClass("active");
-      //     }
-      //     else {
-      //       alert("remove");
-      //       $(this).removeClass("active");
-      //     }
-      //
-      // });
+          // Get current page URL
+           var url = window.location.href;
+
+           // If file name not avilable
+           if(url == ''){
+           url = 'index.html';
+           }
+          $('.category-item').each(function(){
+
+            // select href
+            var href = $(this).attr('href');
+
+            // Check filename
+            if(url == href){
+              if($(this).hasClass("active"))
+              {
+                $(this).removeClass('active').addClass('active');
+              }else{
+                // Add active class
+                $(this).addClass('active');
+              }
+            }
+          });
+
+      });
       // $(window).bind("load", function() {
       //     $("#notf").css('display','none');
       //   });
