@@ -287,32 +287,31 @@
         $(".sidenav a").on("click", function(){
           closeNav();
         });
-          // Get current page URL
-           var url = window.location.href;
 
-           // If file name not avilable
-           if(url == ''){
-           url = 'index.html';
-           }
-          $('.category-item').each(function(){
-
-            // select href
-            var href = $(this).attr('href');
-
-            // Check filename
-            if(url == href){
-              if($(this).hasClass('active'))
-              {
-                $(this).removeClass('active').addClass('active');
-              }else{
-                // Add active class
-                $(this).addClass('active');
-              }
-            }
-            else{
-              $(this).removeClass('active');
-            }
-          });
+          //
+          // // Get current page URL
+          //  var url = window.location.href;
+          //
+          //  // If file name not avilable
+          //  if(url == ''){
+          //  url = 'index.html';
+          //  }
+          // $('.category-item').each(function(){
+          //
+          //   // select href
+          //   var href = $(this).attr('href');
+          //
+          //   // Check filename
+          //   if(url == href){
+          //     if(!$(this).hasClass('active'))
+          //     {
+          //       $(this).addClass('active');
+          //     }
+          //   }
+          //   else{
+          //     $(this).removeClass('active');
+          //   }
+          // });
 
       });
       // $(window).bind("load", function() {
