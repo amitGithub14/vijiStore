@@ -62,9 +62,9 @@
       width:100%;
       z-index:2000;
       bottom:0; left:0; right:0;
-      -webkit-box-shadow: 5px -3px 5px 6px #888;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-      -moz-box-shadow:    5px -3px 5px 6px #888;  /* Firefox 3.5 - 3.6 */
-      box-shadow:         5px -3px 5px 6px #888;
+      -webkit-box-shadow:0 0 5px 2px #666;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -moz-box-shadow:0 0 5px 2px #666;  /* Firefox 3.5 - 3.6 */
+      box-shadow:0 0 5px 2px #666;
     }
 
     .notification-panel a{
@@ -239,14 +239,27 @@
     </div> -->
     </div>
     <script>
+
       for (var i = 0; i < document.links.length; i++) {
-        if (document.links[i].hasClass('active'))
+        if (document.links[i].hasClass('active') && document.links[i].href != document.URL)
         {
-          document.links[i].className = '';
+          //document.links[i].classList.remove("active");
         }
-        if (document.links[i].href == document.URL) {
-            document.links[i].className = 'active';
+        else if(document.links[i].href == document.URL)
+        {
+          if (!document.links[i].hasClass('active'))
+          {
+            document.links[i].classList.add("active");
+          }
+          else {
+              document.links[i].classList.remove("active");
+          }
         }
+
+        // else if(document.links[i].hasClass('active'))
+        // {
+        //   document.links[i].classList.remove("active");
+        // }
     }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
