@@ -55,7 +55,6 @@
     }
 
     .notification-panel{
-      display: none;
       text-align: center;
       position:absolute;
       background-color:#ccc;
@@ -67,6 +66,7 @@
       -moz-box-shadow:    5px -3px 5px 6px #888;  /* Firefox 3.5 - 3.6 */
       box-shadow:         5px -3px 5px 6px #888;
     }
+
     .notification-panel a{
       color: #333;
       text-decoration: none;
@@ -274,13 +274,10 @@
         $(".sidenav a").on("click", function(){
           closeNav();
         });
-
-        $(window).bind("load", function() {
-          $("#notf").css('display','block');
-        });
-
-
       });
+      // $(window).bind("load", function() {
+      //     $("#notf").css('display','none');
+      //   });
 </script>
 </body>
 </html>
