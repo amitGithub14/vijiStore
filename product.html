@@ -7,51 +7,64 @@
 
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
       <link href="css/main.css" rel="stylesheet"/>
+      <svg-icon><src href="svg/si-glyph-pin-location.svg"/></svg>
+      <svg-icon><src href="svg/si-glyph-magnifier-2.svg"/></svg>
+      <svg-icon><src href="svg/si-glyph-trolley-2.svg" /></svg>
       <style>
+      .glyph-icon-location{
+        width:16px;
+        height:16px;
+        color:white !important;
+
+      }
+      .si-glyph-pin-location path{
+        fill: blue !important;
+      }
+
       .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 15px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
 
-@media screen and (max-height: 450px) {
-.sidenav {padding-top: 15px;}
-.sidenav a {font-size: 18px;}
-}
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
 
-.scroll {
-  white-space: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar; }
+  .scroll {
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar; }
 
   .scroll::-webkit-scrollbar {
   display: none; }
@@ -92,10 +105,11 @@
           </div>
           <div class="navbar-cart right-bar" style="float:right;color:white">
             <div style="float:left;padding:15px;">
-              <a href="#">Search</a>
+                <a href="#"><img src="svg/si-glyph-magnifier-2.svg" class="glyph-icon-location"/></a>
             </div>
             <div style="float:left;padding:15px;">
-              <a href="/Help">&nbsp;Cart</a>
+
+              <a href="#"><img src="svg/si-glyph-trolley-2.svg" class="glyph-icon-location"/></a>
             </div>
           </div>
 
@@ -103,7 +117,7 @@
     </div>
     <div class="location-header" style="background-color:#e85656;color:white;left:0;right:0;margin-top:50px;padding:10px;">
       <div class="container">
-      <span>Your location is Chennai ...</span><a href="" style="float:right;color:white">change</a>
+        <img style="margin-right:10px;" src="svg/si-glyph-pin-location.svg" class="glyph-icon-location"/><span>Your location is Chennai ...</span><a href="" style="float:right;color:white">change</a>
     </div>
     </div>
     <div class="location-header" style="background-color:#efefef;left:0;right:0;padding:10px;">
@@ -143,6 +157,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="slide_menu.js"></script>
     <script>
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
@@ -150,6 +165,13 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+$(document).ready(function(){
+  $(".sidenav a").on("click", function(){
+    closeNav();
+  });
+});
+
 </script>
 </body>
 </html>
