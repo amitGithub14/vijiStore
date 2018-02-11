@@ -287,6 +287,15 @@
         $(".sidenav a").on("click", function(){
           closeNav();
         });
+        $(".category-item").on("click", function(){
+          if(!$(this).hasClass("active"))
+          {
+            $(this).addClass("active");
+          }
+          else {
+            $(this).removeClass("active");
+          }
+
       });
       // $(window).bind("load", function() {
       //     $("#notf").css('display','none');
