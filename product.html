@@ -290,9 +290,11 @@
         $(".category-item").on("click", function(){
           if(!$(this).hasClass("active"))
           {
+            alert("add");
             $(this).addClass("active");
           }
           else {
+            alert("remove");
             $(this).removeClass("active");
           }
 
