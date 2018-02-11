@@ -1,0 +1,19 @@
+.navbar-inverse{
+  color:#333 !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.navbar-header a{
+  padding:15px;
+}
+.navbar-brand:hover{
+  color:#000 !important;
+
+}
+
+@media (max-width: 767px) {
+.navbar-header:after, .navbar-header:after{
+  display:block !important;
+  content:none;
+}
+}
