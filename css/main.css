@@ -11,6 +11,11 @@
   margin-left: 10px !important;
 }
 
+.btn, .btn-default{
+  background-color: #e85656;
+  color:white;
+}
+
 @media (max-width: 767px) {
 .navbar-header:after, .navbar-header:after{
   display:block !important;
