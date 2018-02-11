@@ -110,7 +110,7 @@
   }
         </style>
 </head>
-<body onload="loadNotf();">
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -267,13 +267,18 @@
           document.getElementById("notf").style.display = "none";
       }
 
-      function loadNotf(){
-            document.getElementById("notf").style.display = "block";
-      }
+      // function loadNotf(){
+      //       document.getElementById("notf").style.display = "block";
+      // }
       $(document).ready(function(){
         $(".sidenav a").on("click", function(){
           closeNav();
         });
+
+        $(window).bind("load", function() {
+          $("#notf").css('display','block');
+        });
+
 
       });
 </script>
