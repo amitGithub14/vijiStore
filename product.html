@@ -20,65 +20,46 @@
         fill: blue !important;
       }
 
-      .sidenav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-      }
-
-      .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 15px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-      }
-
-      .sidenav a:hover {
-        color: #f1f1f1;
-      }
-
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-
     .notification-panel{
+      vertical-align: middle;
       text-align: center;
       position:absolute;
       background-color:#dedede;
-      padding:20px;
-      width:100%;
-      z-index:2000;
-      bottom:0; left:0; right:0;
-      -webkit-box-shadow:0 0 5px 4px rgba(146, 147, 147, 0.7);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-      -moz-box-shadow:0 0 5px 4px rgba(146, 147, 147, 0.7);  /* Firefox 3.5 - 3.6 */
-      box-shadow:0 0 5px 4px rgba(146, 147, 147, 0.7);
-    }
+      padding:5px;
 
+      bottom:0; left:0; right:0;
+      -webkit-box-shadow:1px 1px 5px 4px rgba(146, 147, 147, 0.7);
+      -moz-box-shadow:1px 1px 5px 4px rgba(146, 147, 147, 0.7);
+      box-shadow:1px 1px 5px 4px rgba(146, 147, 147, 0.7);
+    }
+    .notification-panel img{
+      position:relative;
+      max-width:120px;
+      top:0;
+      bottom:0;
+    }
+    .notification-panel .btn-secondary{
+      font-size: 18px;
+    }
     .notification-panel a{
       color: #333;
       text-decoration: none;
     }
+    .row-vcenter {
+    display: flex;
+    align-items: center;
+    }
     .notification-panel .closebtn{
-      position: absolute;
+      /* position: relative;
       bottom: 0;
+      top: 0;
       right: 25px;
       font-size: 36px;
-      margin-left: 50px;
+      margin-left: 50px; */
+      float:left;
+      font-size: 36px;
     }
-  
+
     </style>
 </head>
 <body>
@@ -143,7 +124,7 @@
         </header>
       </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content product">
       <div class="row">
         <div class="col-xs-4 product-row" style="height:140px;padding-top:20px;">
             <img src="http://imguploaddemo.blob.core.windows.net/productimage/32b1f2aa-7239-40a0-b226-b562d64c02f2.jpg" style="width:90px" alt="product image" title="product"/>
@@ -202,12 +183,21 @@
         </div>
       </div>
       <div style="margin-top:20px;">&nbsp;</div>
-      <div id="notf" class="notification-panel">
-      <a class="btn btn-secondary" href="#">Download App</a><a href="javascript:void(0)" class="closebtn" onclick="closeNotf()">&times;</a>
-      </div>
+
     <!-- <div class="text-center" style="margin-top:20px;margin-bottom:20px;">
       <a class="btn btn-secondary" href="#">Download App</a>
     </div> -->
+    </div>
+    <div id="notf" class="notification-panel">
+      <div class="row row-vcenter">
+        <div class="col-xs-4">
+        <img src="img/playStore_badge_web_generic.png">
+      </div>
+      <div class="col-xs-6"><a class="btn btn-secondary" href="#">Download App</a>
+      </div><div class="col-xs-2">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNotf()">&times;</a>
+      </div>
+      </div>
     </div>
     <script>
 
