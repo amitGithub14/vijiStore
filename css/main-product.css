@@ -53,7 +53,32 @@
 .scroll nav a:hover{
   border_bottom:2px solid #209e91 !important;
 } */
+.scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
 
+.scroll::-webkit-scrollbar {
+  display: none; }
+
+.scroll nav a{
+  display: inline-block;
+  padding:10px 5px 10px 5px;
+  color:#333;
+  text-decoration:none;
+  border:2px solid transparent;
+  /*
+    background-color: #fff;
+    border: 1px solid #bbb;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; */
+}
+.scroll nav a.active{
+  border-bottom-color: #209e91 !important;
+}
+    
 
 @media (max-width: 767px) {
 .navbar-header:after, .navbar-header:after{
