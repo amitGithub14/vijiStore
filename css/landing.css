@@ -1,3 +1,12 @@
+.btn-default{
+  color:#6ac3a7;
+  font-size: 24px;
+}
+
+.btn-download{
+  background-color: #e85656;
+  color:#fff;
+}
 .navbar-inverse{
   color:#333 !important;
   background-color: transparent !important;
@@ -5,6 +14,12 @@
 }
 .navbar-header a{
   padding:15px;
+}
+
+.navbar-brand{
+  margin-top: 10px;
+  font-size: 42px;
+  font-weight: bold;
 }
 .navbar-brand:hover{
   color:#000 !important;
@@ -16,9 +31,4 @@
   display:block !important;
   content:none;
 }
-}
-
-@media screen and (max-height: 450px) {
-.sidenav {padding-top: 15px;}
-.sidenav a {font-size: 18px;}
 }

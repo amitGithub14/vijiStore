@@ -6,25 +6,116 @@
     <title>Home Page</title>
 
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
       <link href="css/landing.css" rel="stylesheet"/>
-      <svg-icon><src href="svg/si-glyph-pin-location.svg"/></svg>
+      <svg-icon><src href="svgFiles/si-glyph-pin-location.svg"/></svg>
       <svg-icon><src href="svg/si-glyph-magnifier-2.svg"/></svg>
       <svg-icon><src href="svg/si-glyph-trolley-2.svg" /></svg>
       <style>
       .glyph-icon-location{
-        width:16px;
-        height:16px;
+        width:26px;
+        height:26px;
         color:white !important;
       }
       .si-glyph-pin-location path{
         fill: blue !important;
       }
+      .right-bar{
+        float:right;color:white;
+      }
+      .brand-green-color{
+          color:#209e91;
+      }
+      .brand-red-color{
+        color:#e85656;
+      }
+      .brand-grey-color{
+          color:#9d9d9d;
+      }
+      .app-background{
+        background-color: #efefef;
+      }
+      .top-image{
+        /* max-width:400px; */
+        width:60%;
+        float:right;
+      }
+      .app-banner-image{
+        width:100%;
+      }
+      .partner-image{
+        width:50%;
+      }
+      .partner-background{
+        background-color: #e85656;
+        color:#fff;
+      }
+  .glyphicon{
+    top:5px;
+  }
+  .form-control{
+    font-size: 18px;
+    height:48px;
+  }
+  .location-text{
 
+    font-size: 26px;
+  }
+  .font-h3{
+    font-family: fantasy;
+    font-weight: bold;
+    font-size: 26px;
+  }
+  .partner-text{
+    font-family:monospace;
+    font-weight: bold;
+    font-size: 52px;
+  }
+  .row-vcenter {
+  display: flex;
+  align-items: center;
+  }
+  .app-image{
+    max-width: 200px !important;
+  }
+  .col-app-download, .col-location, .col-partner{
+    padding:40px;
+  }
 
+@media (max-width:500px)
+{
+  .right-bar{
+    float:left;
+    color:white;
+  }
+  .navbar-brand{
+    font-size: 24px;
+    margin-top: 5px;
+  }
+  .btn-default{
+    font-size: 18px;
+  }
+  .col-app-download, .col-location, .col-partner{
+    padding:20px;
+  }
+
+  .partner-text{
+    font-family:monospace;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .btn-default{
+    font-size: 24px;
+  }
+}
       </style>
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+  <div class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
             <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -41,20 +132,71 @@
             </div>
             <span style="font-size:25px;cursor:pointer;float:left;margin-top:10px;margin-left:10px;" onclick="openNav()">&#9776;</span>
             -->
-            <a class="navbar-brand" href="/">Logo Text</a>
-
+            <a class="navbar-brand" href="#"><span class="brand-green-color">Logo</span><span class="brand-grey-color">Company<span></a>
         </div>
-        <div class="navbar-cart right-bar" style="float:right;color:white">
-          <div style="float:left;padding:15px 5px 15px 5px;">
+        <div class="navbar-cart right-bar">
+          <div class="col-xs-6" style="float:left;padding:15px 5px 15px 5px;">
               <a class="btn btn-default" href="#">Login</a>
           </div>
-          <div style="float:left;padding:15px 5px 15px 5px;">
-
+          <div class="col-xs-6" style="float:left;padding:15px 5px 15px 5px;">
             <a class="btn btn-default" href="#">Register</a>
           </div>
         </div>
-
       </div>
   </div>
+</div>
+  <div class="container-fluid">
+    <div class="content container">
+      <div class="row location">
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 col-location">
+          <span class="location-text">Find Grocery Stores</span><br /><span class="location-text">nearest to you</span>
+          <form>
+            <div class="input-group">
+            <span class="input-group-addon"><img src="svgFiles/si-glyph-pin-location.svg" class="glyph-icon-location"/></span>
+            <input id="location" type="text" class="form-control" name="location" placeholder="Type pincode or location">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+          </div>
+          </form>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-4 hidden-xs" style="vertical-align:middle;">
+          <img class="top-image" src="img/online-shoppingNew.png" alt="find stores" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid app-background">
+    <div class="app-content container">
+      <div class="row app">
+        <div class="col-md-6 app-banner">
+          <img class="app-banner-image" src="img/app-banner.jpg" alt="download app banner" />
+        </div>
+        <div class="col-md-6 col-app-download">
+          <p>
+          <font class="font-h3">You can now download the app</font></br>
+            <font class="font-h3">in a flick.</font></p>
+            <a href="#"><img class="app-image" src="img/playStore_badge_web_generic.png" /></a>
+        </div>
+        <!-- <div class="col-md-6"><a href="#" class="btn btn-default btn-download">Download App Button</a></div> -->
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid partner-background">
+    <div class="partner-content container">
+      <div class="row partner">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 col-partner"><span class="partner-text">Become our Store</span><br /><span class="partner-text">Partner</span></div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12"><img class="partner-image" src="img/online-store.png" alt="Become Partner" /></div>
+
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid" style="padding-bottom:15px;color:#fff; background-color:#209e91; border-top:2px solid #eee;">
+    <div class="container">
+    <h3>LOGO TEXT</h3>
+    <span>&copy; Company Name Published 2018</span>
+  </div>
+  </footer>
 </body>
 </html>
