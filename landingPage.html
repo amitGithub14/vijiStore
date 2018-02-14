@@ -83,19 +83,33 @@
   .col-app-download, .col-location, .col-partner{
     padding:40px;
   }
+  .navbar-cart .btn-default{
+    font-size: 14px;
+  }
 
+  .btn-reg{
+    background-color: #209e91;
+    color:#fff;
+  }
+  .btn-reg:hover{
+    background-color: #e6e6e6;
+    color:#333;
+  }
 @media (max-width:500px)
 {
+  .container-fluid{
+    padding-left:0px;
+    padding-right:0px;
+  }
   .right-bar{
-    float:left;
     color:white;
   }
   .navbar-brand{
-    font-size: 24px;
+    font-size: 22px;
     margin-top: 5px;
   }
-  .btn-default{
-    font-size: 18px;
+  .navbar-cart .btn-default{
+    font-size: 14px;
   }
   .col-app-download, .col-location, .col-partner{
     padding:20px;
@@ -132,14 +146,14 @@
             </div>
             <span style="font-size:25px;cursor:pointer;float:left;margin-top:10px;margin-left:10px;" onclick="openNav()">&#9776;</span>
             -->
-            <a class="navbar-brand" href="#"><span class="brand-green-color">Logo</span><span class="brand-grey-color">Company<span></a>
+            <a class="navbar-brand" href="#"><span class="brand-green-color">Logo</span><span class="brand-grey-color">Text<span></a>
         </div>
         <div class="navbar-cart right-bar">
           <div class="col-xs-6" style="float:left;padding:15px 5px 15px 5px;">
               <a class="btn btn-default" href="#">Login</a>
           </div>
           <div class="col-xs-6" style="float:left;padding:15px 5px 15px 5px;">
-            <a class="btn btn-default" href="#">Register</a>
+            <a class="btn btn-default btn-reg" href="#">Register</a>
           </div>
         </div>
       </div>
