@@ -27,8 +27,9 @@
 }
 
 footer{
-  padding:15px;color:#fff; background-color:#209e91;
+  padding:15px;color:#209e91; background-color:#fff;
   border-top:2px solid #eee;
+
 }
 @media (max-width: 767px) {
 .navbar-header:after, .navbar-header:after{
