@@ -79,13 +79,17 @@
   display: flex;
   align-items: center;
   }
+
   .app-image{
     max-width: 200px !important;
   }
   .col-app-download, .col-location, .col-partner{
-    padding:40px;
+    vertical-align: middle;
+    padding:7% 0;
   }
-
+.col-app-download{
+  padding:12% 0;
+}
   .btn-reg{
     background-color: #209e91;
     color:#fff;
@@ -221,21 +225,22 @@
         <div class="col-md-6 app-banner">
           <img class="app-banner-image" src="img/groceryAppClick.png" alt="download app banner" />
         </div>
-        <div class="col-md-6 col-app-download">
-          <p>
-          <font class="font-h3">You can now download the app in a flick.</font></p>
+        <div class="col-md-6 col-app-download align-middle text-center">
+            <font class="font-h3">You can now download the app in a flick.</font><br />
             <a href="#"><img class="app-image" src="img/playStore_badge_web_generic.png" /></a>
-        </div>
-        <!-- <div class="col-md-6"><a href="#" class="btn btn-default btn-download">Download App Button</a></div> -->
+        </div
       </div>
     </div>
   </div>
   <div class="container-fluid">
     <div class="partner-content container">
       <div class="row partner">
-        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 col-partner"><span class="partner-text">Become Our Store Partner For FREE<br/>CONTACT US</span></div>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12"><img class="partner-image" src="img/grocery-store-partner-simple.png" alt="Become Partner" /></div>
-
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 col-partner align-middle">
+          <span class="partner-text">Become Our Store Partner For FREE<br/>CONTACT US</span>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+          <img class="partner-image" src="img/grocery-store-partner-simple.png" alt="Become Partner" />
+        </div>
       </div>
     </div>
   </div>
