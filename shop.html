@@ -71,6 +71,10 @@
         .map_add i{
           cursor: pointer;
         }
+
+        .mobile-location-pos{
+          margin-left: -40px;
+        }
       }
         @media (max-width:500px){
           .remove_space{
@@ -125,7 +129,7 @@
                         </span>
                     </h1>
                 </div>
-                <div class="col-sm-6 hidden-xs">
+                <div class="col-sm-6 hidden-sm hidden-xs">
                     <div class="typeahead__container">
                         <div class="typeahead__field">
                             <span class="typeahead__query">
@@ -196,10 +200,10 @@
                     </ul>
                 </div>
                 <!-- mobile-->
-                <div class="col-sm-6 hidden-lg">
+                <div class="col-sm-6 hidden-md hidden-lg">
 
                 </div>
-                <div class="col-sm-2 col-sm-12 map_add remove_space_mob mobile-header hidden-lg">
+                <div class="col-sm-2 col-sm-12 map_add remove_space_mob mobile-header hidden-lg hidden-md hidden-sm">
                     <span data-toggle="modal" data-target="#SearchModel" class=""><i class="fa fa-search mobile-search" aria-hidden="true"></i></span>
                      <span class="map_pin">
 
@@ -216,9 +220,9 @@
                 <div class="clearfix"></div>
             </div>
             <!-- mobile-->
-            <div class="top_nav hidden-lg location-header">
+            <div class="top_nav hidden-lg hidden-md hidden-sm location-header">
                 <div class="col-sm-12">
-                    <center class="img-color cursor"><i class="fa fa-map-marker"></i>&nbsp; location - 638401 <span style="margin-left:15px;"><u>change</u></span></center>
+                    <center class="img-color cursor mobile-location-pos"><i class="fa fa-map-marker"></i>&nbsp; location - 638401 <span style="margin-left:15px;"><u>change</u></span></center>
                 </div>
             </div>
             <!---->
