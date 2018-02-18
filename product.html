@@ -15,6 +15,9 @@
       .float-right{
         float:right;
       }
+      .bar-style{
+        font-size:25px;cursor:pointer;float:left;margin-top:10px;margin-left:10px;
+      }
       .glyph-icon-location{
         width:16px;
         height:16px;
@@ -113,17 +116,16 @@
                   <a href="#">MY CART</a>
                   <a href="#">CHECKOUT</a>
               </div>
-              <span style="font-size:25px;cursor:pointer;float:left;margin-top:10px;margin-left:10px;" onclick="openNav()">&#9776;</span>
+              <span class="bar-style" onclick="openNav()"><i class="fa fa-bars"></i></span>
               <a class="navbar-brand" href="/">Logo Text</a>
 
           </div>
           <div class="navbar-cart right-bar" style="float:right;color:white">
             <div style="float:left;padding:15px;">
-                <a href="#"><img src="svg/si-glyph-magnifier-2.svg" class="glyph-icon-location"/></a>
+              <a href="#"><i class="fa fa-search"></i></a>
             </div>
             <div style="float:left;padding:15px;">
-
-              <a href="#"><img src="svg/si-glyph-trolley-2.svg" class="glyph-icon-location"/></a>
+              <a href="#"><i class="fa fa-shopping-cart"></i></a>
             </div>
           </div>
 
@@ -131,7 +133,8 @@
     </div>
     <div class="location-header" style="background-color:#e85656;color:white;left:0;right:0;margin-top:50px;padding:10px;">
       <div class="container">
-        <img style="margin-right:10px;" src="svg/si-glyph-pin-location.svg" class="glyph-icon-location"/><span>Your location is Chennai ...</span><a href="https://amitgithub14.github.io/vijiStore/location.html" style="float:right;color:white">change</a>
+        <i style="margin-right:10px;" class="fa fa-map-marker-alt"></i>
+        <span>Your location is Chennai ...</span><a href="https://amitgithub14.github.io/vijiStore/location.html" style="float:right;color:white">change</a>
     </div>
     </div>
     <div class="menu-header" style="background-color:#efefef;left:0;right:0;padding:0px 2px 0px 2px;border-bottom: 1px solid #bbb;">
