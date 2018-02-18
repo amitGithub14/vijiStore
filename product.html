@@ -20,6 +20,40 @@
         fill: blue !important;
       }
 
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      }
+
     .notification-panel{
       position:fixed;
       background-color:#dedede;
@@ -96,7 +130,7 @@
         <img style="margin-right:10px;" src="svg/si-glyph-pin-location.svg" class="glyph-icon-location"/><span>Your location is Chennai ...</span><a href="https://amitgithub14.github.io/vijiStore/location.html" style="float:right;color:white">change</a>
     </div>
     </div>
-    <div class="location-header" style="background-color:#efefef;left:0;right:0;padding:0px 2px 0px 2px;border-bottom: 1px solid #bbb;">
+    <div class="menu-header" style="background-color:#efefef;left:0;right:0;padding:0px 2px 0px 2px;border-bottom: 1px solid #bbb;">
       <div class="container" >
         <header class="scroll">
           <nav>

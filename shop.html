@@ -1,0 +1,549 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="http://shoppingwebangular.azurewebsites.net/StaticContent/js/src?v=vJJrM7QjUfWYlT44ZLZmbVMzlNny8T-3fgBvjVW0-2M1"></script>
+
+    <link href="http://shoppingwebangular.azurewebsites.net/StaticContent/css/src?v=y4xatr2TIEOGstvbZiFtqCHx_hEd78A1Az0VhevxUV01" rel="stylesheet"/>
+
+    <script src="http://shoppingwebangular.azurewebsites.net/StaticContent/Js/CustomScript/ShopLayout.js"></script>
+
+
+                <link href="css/custom.css" rel="stylesheet" />
+                <link href="css/fontawesome-all.css" rel="stylesheet" />
+
+                <link rel='stylesheet' href='css/main-product.css' type='text/css'  />
+    <style>
+
+.location-header{
+  background-color:#e85656;color:white;
+  left:-20px;right:-20px;
+  padding:10px;
+  width:120%;
+  margin-top:20px;
+  position:relative;
+}
+
+
+.top_nav{
+  margin-bottom:-10px;
+}
+.mobile-header{
+  width:35%;
+}
+        .dev {
+            /*display: none;*/
+        }
+        .well{
+          background-color: #fff !important;
+          border:none !important;
+        }
+        .shop-index{
+        font-size: 26px;
+        height:100%;
+        padding:5% 0;
+        }
+
+        .shop-details{
+          font-size: 18px;
+        }
+        .promo-code{
+          font-size: 22px;
+          margin-left: 5px;
+        }
+        .promo-discount{
+          float:right;margin-right:15px;color:#e85656;
+        }
+        .promo-bg{
+          border:1px solid #e85656;
+          display: inline-block;
+          padding:2px 5px;
+        }
+
+          @media (max-width:756px){
+        .logo-responsive{
+          margin-left:20px;
+        }
+
+        .map_add i{
+          cursor: pointer;
+        }
+      }
+        @media (max-width:500px){
+          .remove_space{
+            padding-left: 2px !important;
+            padding-right: 2px !important;
+          }
+          .well{
+            padding:15px 0px !important;
+            padding-bottom:0px !important;
+
+          }
+          .shop-index{
+            padding-left:0px !important;
+          font-size: 14px;
+          }
+          .shop-details{
+            font-size: 12px;
+          }
+          .disp-img{
+            padding-right: 5px !important;
+          }
+          .promo-code{
+            font-size: 14px;
+          }
+            .promo-discount{{
+              font-size: 22px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body ng-app="myApp" ng-cloak>
+    <div id="load" style="visibility:hidden"></div>
+
+    <div id="adv_nav" ng-controller="myCtrlTop">
+        <div class="container dev">
+            <div class="top_nav">
+                <div class="col-sm-2 col-xs-7">
+                    <h2 style="margin:0px;">
+                        <span class="smallnav menu" onclick="openNav()">
+                            <p style="position:absolute; left:-6px; top:-6px">
+                                <i class="fa fa-bars img-color"></i>
+                            </p>
+                            <img src="http://shoppingwebangular.azurewebsites.net/StaticContent/Images/logo1.png" class="img-responsive logo-responsive" />
+                        </span>
+                    </h2>
+                    <h1 style="margin:0px;">
+                        <span class="largenav" onclick="location.href='/home/shop'">
+                            <img src="http://shoppingwebangular.azurewebsites.net/StaticContent/Images/logo1.png" class="img-responsive">
+                        </span>
+                    </h1>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <div class="typeahead__container">
+                        <div class="typeahead__field">
+                            <span class="typeahead__query">
+                                <input name="q" type="search" class="SearchName" ng-model="ProductName" placeholder="Search Products">
+                            </span> <span class="typeahead__button">
+                                <button ng-click="SearchProduct()"> <span class=""><i class="fa fa-search" aria-hidden="true"></i></span> </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xs-12 map_add remove_space_mob hidden-xs">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> <span class="map_pin">
+                        <input class="" placeholder="452001">
+                        <button class="btn_map"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    </span>
+                    <div id="cartIcon" class="upper-links btn_cart">
+                        <span class="links cart_ico" href=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i><span class="itemCount"></span></span>
+                        <div class="togglefil4cart">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Â </th>
+                                                <th>Product</th>
+                                                <th>Name</th>
+                                                <th>Qty</th>
+                                                <th class="text-center">Price</th>
+                                                <th class="text-center">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tr ng-repeat="val in productdata track by $index ">
+
+                                            <td>{{$index}}</td>
+
+                                            <td>{{val.Name}}</td>
+                                            <td>{{val.Unit}}</td>
+                                            <td>{{val.Qty}}</td>
+                                            <td>{{val.Price}}</td>
+                                            <td>{{val.Total}}</td>
+                                        </tr>
+
+                                    </table>
+                                    <button onclick="location.href='/home/mycart'" class="btn_cntn">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2  m-top hidden-xs">
+                    <ul class="largenav pull-right">
+
+                        <li id="user" class="dropdown btn_usr">
+                            <div class="profile-name" ng-hide="isUserHide">
+                                <span><i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;<span class="">{{Name}}</span> <span class="caret"></span></span>
+
+                            </div>
+                            <div class="profile-name m-top-login" ng-hide="isLoginHide">
+                                <span><a href="http://shoppingwebangular.azurewebsites.net/home/login" class="login-user">Login</a> | <a href="/home/register" class="login-user">Signup</a></span>
+                            </div>
+                            <div class="togglefil4usr">
+                                <div class="list"><a href="http://shoppingwebangular.azurewebsites.net/home/myorder">My Order</a></div>
+                                <div class="list"><a href="">My Profile</a></div>
+                                <div class="list"><a href="">Forget Password</a></div>
+                                <div class="list"><a ng-click="Logout()">Logout</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- mobile-->
+                <div class="col-sm-6 hidden-lg">
+
+                </div>
+                <div class="col-sm-2 col-sm-12 map_add remove_space_mob mobile-header hidden-lg">
+                    <span data-toggle="modal" data-target="#SearchModel" class=""><i class="fa fa-search mobile-search" aria-hidden="true"></i></span>
+                     <span class="map_pin">
+
+                        <button class="btn_map"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    </span>
+                    <div id="cartIcon" class="upper-links btn_cart">
+                        <span class="links cart_ico" href=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i><span class="itemCount" ></span></span>
+
+                    </div>
+                </div>
+
+
+                <!---->
+                <div class="clearfix"></div>
+            </div>
+            <!-- mobile-->
+            <div class="top_nav hidden-lg location-header">
+                <div class="col-sm-12">
+                    <center class="img-color cursor"><i class="fa fa-map-marker"></i>&nbsp; location - 638401 <span style="margin-left:15px;"><u>change</u></span></center>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!-- Search Model-->
+        <div id="SearchModel" class="modal fade" role="dialog">
+
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content search-mobile-top cursor">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Enter Product Name</label>
+                                <label class="float-right cursor" ng-click="SearchClose()">x</label>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mobile-search-product">
+
+                                <input type="text" class="form-control SearchName1" ng-model="ProductName" ng-change="SearchProductMobile()" />
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 searchtable">
+                            <table class="table table-hover">
+                                <tbody>
+
+                                    <tr ng-repeat="val in SearchData track by $index ">
+                                        <td ng-click="ProductSearchStore(val.Name)">{{val.Name}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Mobile Nav-->
+    <div id="mySidenav" class="sidenav">
+        <div class="container side_nav_head"> <span class="sidenav-heading">
+            <img src="StaticContent/Images/home.png"></span>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times"></i></a> </div>
+        <div class="side_nav_list">
+            <a href="#">Home</a>
+            <a href="store.html">Store</a>
+            <a href="my_cart.html">My Cart</a>
+            <a href="checkout.html">Checkout</a>
+        </div>
+    </div>
+
+    <div ng-controller="myCtrl">
+
+
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<script src="http://shoppingwebangular.azurewebsites.net/StaticContent/Js/CustomScript/Shop.js"></script>
+<!--Mobile Nav-->
+<div class="container">
+    <div id="homeBanner" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#homeBanner" data-slide-to="0" class="active"></li>
+            <li data-target="#homeBanner" data-slide-to="1"></li>
+            <li data-target="#homeBanner" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner top_slide" id="loadImg">
+
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#homeBanner" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#homeBanner" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="">
+        <div class="span12">
+            <h2 class="lab_hd">Select The Store To Continue</h2>
+            <div class="well">
+                <div id="myCarousel" class="carousel slide">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item active" ng-repeat="val in StoreTable">
+                            <div class="row-fluid">
+                                <div class="{{col}}">
+
+                                    <div ng-click="ShopSession(val)" class="store_box" onclick="location.href='http://shoppingwebangular.azurewebsites.net/home/store'">
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-xs-4 disp-img">
+                                          <img src={{val.Url}} class="img-responsive shop-img-index">
+                                        </div>
+                                            <div class="col-lg-8 col-md-8 col-xs-8 shop-index">
+                                                {{val.ShopName}}
+                                                <div class="shop-details">
+                                                Max Discount &nbsp;&#8377;&nbsp;50<br />
+                                                Min Order Value &nbsp;&#8377;&nbsp;250<div class="promo-discount">
+                                                  <span>10% Off</span>
+                                                </div>
+                                                <div class="promo-bg">Promo code <span class="promo-code"><strong>Next100<strong></span><div>
+
+                                              </div>
+                                            </div>
+
+
+                                            </div>
+                                          </div>
+                                            <!-- <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-6 store-promo">
+                                                        <div>
+                                                            <center>Promocode <span class="off-style">JAN18</span> </center>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-offset-1 col-lg-5  store-continue">
+                                                        <center>Continue <i class="fa fa-angle-right"></i></center>
+                                                    </div>
+                                                </div>
+
+                                            </div> -->
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/row-fluid-->
+                        </div>
+
+                    </div>
+                    <!--/carousel-inner-->
+
+                </div>
+                <!--/myCarousel-->
+
+            </div>
+            <!--/well-->
+        </div>
+    </div>
+</div>
+<!-- Static Modal -->
+<div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="togglefil" style="display:block !important">
+                    <h2>Select to Continue</h2>
+                    <div class="togglefil_area">
+                        <span>
+                            <input type="text" placeholder="Enter Pin Code Or Location">
+                        </span>
+                        <div class="area_list">
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-xs-2 remove_space">
+                                    <input type="radio" data-dismiss="modal">
+                                </div>
+                                <div class="col-xs-3">265145</div>
+                                <div class="col-xs-1">-</div>
+                                <div class="col-xs-5">Sholinganallur</div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://shoppingwebangular.azurewebsites.net/StaticContent/Js/imgLiquid-min.js"></script>
+<script type="text/javascript">
+    $(window).on('load', function () {
+        // $('.modal-static').modal('show');
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false });
+        $('#myCarousel').carousel({
+            interval: false
+        })
+        //HOME BANNER
+        $('#homeBanner').carousel({
+            interval: 3500
+        })
+        $('#homeBanner-mob').carousel({
+            interval: 3500
+        })
+
+
+    });
+</script>
+        <div class="togglefil4cart-store">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Â </th>
+                                <th>Product</th>
+                                <th>Name</th>
+                                <th>Qty</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Total</th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="val in productdata track by $index ">
+
+                            <td>{{$index}}</td>
+
+                            <td>{{val.Name}}</td>
+                            <td>{{val.Unit}}</td>
+                            <td>{{val.Qty}}</td>
+                            <td>{{val.Price}}</td>
+                            <td>{{val.Total}}</td>
+                        </tr>
+
+                    </table>
+                    <button onclick="location.href='/home/mycart'" class="btn_cntn">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br /><br /><br /><br />
+    <div class="footer">
+        <div> <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a> <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a> <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a> <a href="mailto:e-shoppy@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a></div>
+        <p> Â© 2017 e-shoppy All rights reserved. </p>
+    </div>
+        <script src="http://shoppingwebangular.azurewebsites.net/StaticContent/Js/CustomScript/LayoutCommon.js"></script>
+        <script>
+          $(document).ready(function(){
+            $(".area_list").show();
+          });
+        </script>
+</body>
+</html>
